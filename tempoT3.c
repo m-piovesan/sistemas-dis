@@ -8,7 +8,7 @@
 #define fault 2     
 #define recovery 3  
 
-#define UKNOWN -1
+#define UNKNOWN -1
 #define CORRETO 0
 #define FALHO 1
 
@@ -22,7 +22,7 @@ TipoProcesso *processo;
 int setup(int numProcessos, int vetorEstados[]) {
     for (int i = 0; i < numProcessos; i++) {
         schedule(test, 30.0, i);
-        vetorEstados[i] = UKNOWN;
+        vetorEstados[i] = UNKNOWN;
     }
     
     schedule(fault, 31.0, 1);
@@ -37,8 +37,8 @@ int setup(int numProcessos, int vetorEstados[]) {
 
 const char* nomeEstado(int estado) {
     switch (estado) {
-        case UKNOWN:
-            return "UKNOWN";
+        case UNKNOWN:
+            return "UNKNOWN";
         case CORRETO:
             return "CORRETO";
         case FALHO:
